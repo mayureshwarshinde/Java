@@ -1,0 +1,64 @@
+Map:
+=========
+    map does not extend the collections interface, it is a interface
+
+                               Map
+                                |
+            -----------------------------
+            |                           |
+        HashMap                     HashTable
+        |                               |--> Hashtable (legacy)
+        |--> LinkedHashMap
+        |--> WeakHashMap
+        |--> IdentityHashMap
+
+
+HashMap:
+========
+
+i) declaration
+    HashMap<Integer, String> map = new HashMap<>();
+
+ii) insert
+    map.put(1, "helloworld")
+
+iii) access
+    map.get(2);
+
+iv) check whether key exists
+    map.containsKey(1);
+
+v) check whether value exists
+    map.containsValue("helloworld");
+
+vi) iterate through keys
+    a) Set<Integer> integers = map.keySet();        // the keys are stored in that set
+        for(int i : map.keySet()) {
+            syso(map.get(i));
+        }
+    b) Set<Map.Entry<Integer, String>> entries = map.entrySet();     // returns keys + values
+        for(Map.Entry<Integer, String> entry : entries) {
+            syso(entry.getKey(() + " : " + entry.getValue());
+        }
+
+vii) remove
+    map.remove(2);          // returns true if it was removed
+
+vii) display map
+    syso(map);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

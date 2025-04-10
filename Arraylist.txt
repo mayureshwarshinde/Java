@@ -48,6 +48,9 @@ viii) sort the list in ascending order
 ix) sort list in descending order
     Collections.sort(list, Collections.reverseOrder());
 
+x) check whether an element exist
+    list.contains(11);              // return true if exists
+
 
 
 
