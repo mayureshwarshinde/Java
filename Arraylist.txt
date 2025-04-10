@@ -1,0 +1,53 @@
+Arraylist operations:
+=====================
+i) add
+ii) get
+iii) heapify
+iv) delete/remove
+v) iterate/operations
+
+
+Point to note:
+==============
+i) arraylist can store only object, hence even int is store as 'Number'
+
+
+To import Arraylist:
+====================
+    import java.util.ArrayList;
+
+
+
+
+CRUD:
+=====================
+i) display the list
+    System.out.println(list);
+
+ii) insert an element
+    list.add(7);
+
+iii) access an element           // by index
+    list.get(0);
+
+iv) add element at a particular index
+    list.add(1, 9);
+
+v) set/modify an element at an index
+    list.set(2, 7);
+
+vi) remove an element from the list
+    list.remove(2);
+
+vii) know the size of the list
+    list.size();
+
+viii) sort the list in ascending order
+    Collections.sort(list);
+
+ix) sort list in descending order
+    Collections.sort(list, Collections.reverseOrder());
+
+
+
+
