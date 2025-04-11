@@ -1,0 +1,65 @@
+object equality:
+================
+    // string are stored in STRING POOL area, == checks reference
+	String string1 = new String("hello");
+	String string2 = new String("hello");
+	System.out.println(string1 == string2);             // false
+	System.out.println(string1.equals(string2));        // true
+
+
+String methods:
+===============
+  
+// common
+        string.length()
+        string.charAt(0)
+        string.string.equalsIgnoreCase("hellOWorLD");
+    
+// lexicographical comparison
+        string.compareTo(string2);
+        string.compareToIgnoreCase(string2);
+    
+// partitioning
+        string.substring(5, 8);             // first param included, second param excluded
+        string.subSequence(5, 8);
+    
+// change case
+        string.toUpperCase();
+        string.toLowerCase();
+    
+// replace
+        "hello world world world".replace("world", "bro");
+    
+// boolean check
+        "hello world".contains("hell");
+        "hello world".startsWith("hell");
+        "hello world".endsWith("rld");
+        "hello world".isEmpty();
+        "    ".isBlank();
+    
+// get indexes
+        string.indexOf('a');
+        string.indexOf("llo");
+        string.lastIndexOf('a');
+        string.lastIndexOf("ll");
+        String.valueOf(false);      String.valueOf(99);
+    
+// formatting
+        String.format("My name is %s and im %d years old", "Alice", 20)
+
+// String to Integer conversion
+    Integer.parseInt("25");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
