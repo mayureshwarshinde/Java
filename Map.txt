@@ -44,8 +44,11 @@ vi) iterate through keys
 vii) remove
     map.remove(2);          // returns true if it was removed
 
-vii) display map
+viii) display map
     syso(map);
+
+ix) get default if not present
+    map.getOrDefault(key, 0);
 
 
 

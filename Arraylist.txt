@@ -51,6 +51,9 @@ ix) sort list in descending order
 x) check whether an element exist
     list.contains(11);              // return true if exists
 
+xi) intialize with fix size with default values
+    ArrayList<Integer> list = new ArrayList<>(Collections.nCopies(size, 0));
+
 
 
 
