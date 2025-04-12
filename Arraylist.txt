@@ -55,5 +55,11 @@ xi) intialize with fix size with default values
     ArrayList<Integer> list = new ArrayList<>(Collections.nCopies(size, 0));
 
 
+Special Methods:
+================
+i) declare and initialize the list at the same time
+    ArrayList<String> list2 = new ArrayList<>(Arrays.asList("A", "B", "C"));
+
+
 
 
