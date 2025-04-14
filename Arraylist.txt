@@ -61,5 +61,10 @@ i) declare and initialize the list at the same time
     ArrayList<String> list2 = new ArrayList<>(Arrays.asList("A", "B", "C"));
 
 
+Custome Comparator:
+===================
+    list.sort((pair1, pair2) -> Integer.compare(pair1.first, pair2.first));
+
+
 
 
