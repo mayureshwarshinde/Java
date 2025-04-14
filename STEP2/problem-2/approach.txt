@@ -1,0 +1,5 @@
+i) extract hours and minutes from given string
+ii) convert it into minutes
+iii) calculate a_start, a_end  and  b_start, b_end in minutes
+iv) finally check whether b_start < a_end  or  a_start < b_end
+
