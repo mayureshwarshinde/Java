@@ -1,0 +1,5 @@
+i) iterate from 0 to n-2, if next and curr one are same, double curr and make next 0.
+ii) maintain 'j' set to 0, if curr is non-zero add it to j position and incr j
+iii) handle the last element case, as we are iterating till n-2
+iv) finally make all remaining as zero i.e from j to n-1
+
