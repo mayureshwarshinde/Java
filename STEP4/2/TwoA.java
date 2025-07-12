@@ -3,7 +3,7 @@ package hashing;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Two {
+public class TwoA {
 	public static boolean check(int[] a, int[] b) {
 		Map<Integer, Boolean> map = new HashMap<>();
 		
