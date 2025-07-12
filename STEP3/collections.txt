@@ -1,0 +1,314 @@
+
+Collections:
+=================
+
+					   Collection
+						 |
+		 ----------------------------------------
+		 |				 |				        |
+		List (I)	    Set (I)			    Queue (I)
+		 |				 |				        |-------------------- Deque (I)
+	--------------		--------------		-----------------			|
+	|				    |				    |					    -----------------
+	|				    |				    |					    |		        |
+	|-> Arraylist		|-> EnumSet			|-> ArrayDeque		ArrayDeque	  LinkedList
+	|				    |				    |
+	|-> LinkedList		|-> HashSet			|-> LinkedList
+	|				    |				    |
+	|-> Stack			|-> LinkedHashSet	|-> PriorityQueue
+	|				    |
+	|-> Vector			|-> TreeSet
+
+
+
+
+     				   Map					Iterator
+			          =====					========
+						|					    |
+	   				  HashMap			    ListIterator
+						|
+	   				  TreeMap
+						|
+	   				  EnumMap
+						|
+					LinkedHashMap
+						|
+	  				 WeakHashMap
+
+
+
+
+Iterators
+==========
+
+i) declaration:
+	Iterator it = list.iterator();
+
+ii) Iteration
+	while(it.hasNext()) {
+            System.out.print(it.next() + "\n");
+      }
+
+	// hasNext() : return true if next element is present
+	// next() : moves to next element and returns it
+		!! throws exception if next element no present
+
+
+
+
+Stacks
+==========
+
+i) declaration
+	Stack<Integer> stack = new Stack<>();
+
+ii) push
+	stack.push(4);
+
+iii) pop
+	stack.pop();			// throws EmptyStackException if stack empty
+
+iv) top
+	stack.peek();			// throws EmptyStackException if stack empty
+
+v) last
+	stack.firstElement();		// returns bottom-most element, throws NoSuchElementException if stack empty
+
+vi) check if empty
+	stack.empty()
+
+
+
+
+Queue
+==========
+
+i) declaration
+	Queue<Integer> queue = new LinkedList<>();
+
+ii) push
+	queue.offer(4);			// returns false if operation fails
+	queue.add(4);			// throws exception if operation fails
+
+iii) pop - always front/head gets popped
+	queue.poll();			// pop and return element ,  return null if queue empty
+	queue.remove();			// pop and return element ,  throws exception if queue empty
+
+iv) front
+	queue.peek()			// return front element
+	queue.element()			// throws exception if queue empty
+
+v) last
+	// no method exist
+
+vi) empty
+	queue.isEmpty()
+
+vii) size
+	queue.size()
+
+viii) recommended
+	offer, poll, peek
+
+
+
+
+Dequeue
+=================
+
+i) add
+	a) offer()
+	b) offerFirst()
+	c) offerLast()
+
+ii) top
+	a) peek()
+	b) peekFirst()
+	c) peekLast()
+
+iii) pop
+	a) poll()
+	b) pollFirst()
+	c) pollLast()
+
+iv) isEmpty
+v) size
+vi) clear
+
+
+
+
+HashSet
+=============
+	// elements are not stored in the sorted format, hence always O(1)
+i) add
+	set.add(4);
+
+ii) remove
+	set.remove(2);
+
+iii) contains
+	set.contains(4);
+
+iv) empty
+	set.isEmpty();
+
+v) size
+	set.size();
+
+vi) clear
+	set.clear();
+
+
+
+
+TreeSet
+==============
+	// elements are stored in the sorted format using binary tree, hence always log(1)
+i) add
+ii) remove
+iii) contains
+iv) empty
+v) size
+vi) clear
+
+
+
+
+
+
+
+
+
+				MAPS
+****************************************************
+
+HashMap
+================
+
+i) declaration
+	HashMap<Integer, String> hashMap = new HashMap<>();
+
+ii) put
+	map.put(2, "hello");
+
+iii) get
+	map.get(2);
+	map.getOrDefault(2, 0);
+
+iv) contains
+	map.containsKey(2);
+	map.containsValue(4);
+
+v) remove
+	map.remove(4);
+	map.remove(4, "check-value");
+
+vi) iteration
+	// on key-value
+        for(Map.Entry<Integer, Integer> entry : hashMap.entrySet()) {
+            System.out.print(entry.getKey() + " : ");
+            System.out.print(entry.getValue() + " | ");
+            System.out.println(entry);
+        }
+	// on keys
+        for(int key : hashMap.keySet()) {
+        	System.out.println(key);
+        }
+	// on values
+        for(int val : hashMap.values()) {
+        	System.out.println(val);
+        }
+
+
+
+
+
+
+
+
+
+
+
+Arrays class
+=====================
+
+normal array declaration
+    int[] arr = {1, 2, 3, 4, 5, 6, 7};
+
+i) binary search
+    Arrays.binarySearch(arr, 5);        // array must be sorted
+
+ii) sort
+    Arrays.sort(arr);
+
+iii) fill up
+    Arrays.fill(arr, -1);
+
+
+
+
+Collections class
+======================
+
+normal arraylist declaration
+    List<Integer> list = new ArrayList<>();
+
+i) min/max
+    Collections.min(list);
+    Collections.max(list);
+
+ii) frequency
+    Collections.frequency(list, 4)
+
+iii) sorting
+    Collections.sort(list);
+    Collections.sort(list, Comparator.reverseOrder());
+    
+iv) comparable
+    // sorting list of objects
+	@Override
+	public int compareTo(Pair that) {
+		int diff = this.first - that.first;
+		if(diff == 0) {
+			return this.second - that.second;
+		}
+		return diff;
+	}
+
+v) comparator
+    // old
+    Collections.sort(list, new Comparator<Pair>() {
+        @Override
+        public int compare(Pair pair1, Pair pair2) {
+            return pair1.compareTo(pair2);
+        }
+    });
+
+    // new - lambda
+    Collecions.sort(list, (o1, o2) -> o1.name.compareTo(o2.name));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Note:
+==========
+i) As per best practice, try to use the parent upcasted reference, unless those extra methods are needed
+ii) duplicates are not allowed in set
+iii) for using sets of non-primitives, overriding of 'equals()' and 'hashCode()' method is mandatory
+	- otherwise set will have duplicate values

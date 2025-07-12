@@ -1,0 +1,42 @@
+// PriorityQueue of Pairs
+
+// i) Default Natural Ordering (Requires Comparable Implementation)
+PriorityQueue<Pair> pq = new PriorityQueue<>();
+// Sorts based on the compareTo() method defined in the Pair class.
+// Example compareTo() in Pair class:
+@Override
+public int compareTo(Pair other) {
+    int result = Integer.compare(this.first, other.first); // Sort by 'first' field
+    if (result == 0) {
+        result = Integer.compare(this.second, other.second); // Tie-breaker: sort by 'second' field
+    }
+    return result;
+}
+
+// ii) Using Custom Comparator (Inline Lambda)
+PriorityQueue<Pair> pq = new PriorityQueue<>((a, b) -> {
+    int result = Integer.compare(a.first, b.first); // Sort by 'first' field
+    if (result == 0) {
+        result = Integer.compare(a.second, b.second); // Tie-breaker: sort by 'second' field
+    }
+    return result;
+});
+
+// iii) Using Custom Comparator (Explicit Definition)
+Comparator<Pair> comparator = (a, b) -> {
+    int result = Integer.compare(a.first, b.first); // Sort by 'first' field
+    if (result == 0) {
+        result = Integer.compare(a.second, b.second); // Tie-breaker: sort by 'second' field
+    }
+    return result;
+};
+PriorityQueue<Pair> pq = new PriorityQueue<>(comparator);
+
+// iv) Reverse Order (Max-Heap)
+PriorityQueue<Pair> pq = new PriorityQueue<>((a, b) -> {
+    int result = Integer.compare(b.first, a.first); // Reverse sort by 'first' field
+    if (result == 0) {
+        result = Integer.compare(b.second, a.second); // Reverse tie-breaker by 'second' field
+    }
+    return result;
+});
